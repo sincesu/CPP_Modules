@@ -1,24 +1,25 @@
 #include <iostream>
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed(const int value)
 {
-	num_value = value;
+	setRawBits(value * 256);
 }
 
 Fixed::Fixed(const float value)
 {
-	num_value = value;
+	setRawBits((int)roundf(value * 256));
 }
 
-float Fixed::toFloat(void)
+float Fixed::toFloat(void) const
 {
-
+	return (num_value / 256.0);
 }
 
-int Fixed::toInt(void)
+int Fixed::toInt(void) const
 {
-
+	return (num_value / 256);
 }
 
 Fixed::Fixed()
@@ -56,4 +57,11 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	num_value = raw;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) 
+{
+	out << fixed.toFloat();
+	
+	return out;
 }
