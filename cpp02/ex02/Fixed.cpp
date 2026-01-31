@@ -19,7 +19,7 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-	return (num_value / 256);
+	return (num_value >> bit_value);
 }
 
 Fixed::Fixed()
