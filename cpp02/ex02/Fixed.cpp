@@ -90,50 +90,32 @@ Fixed &Fixed::max(Fixed &fixed1, Fixed &fixed2)
 
 bool Fixed::operator>(Fixed const &other) const
 {
-	if (this->toFloat() > other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value > other.num_value);
 }
 
 bool Fixed::operator<(Fixed const &other) const
 {
-	if (this->toFloat() < other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value < other.num_value);
 }
 
 bool Fixed::operator>=(Fixed const &other) const
 {
-	if (this->toFloat() >= other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value >= other.num_value);
 }
 
 bool Fixed::operator<=(Fixed const &other) const
 {
-	if (this->toFloat() <= other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value <= other.num_value);
 }
 
 bool Fixed::operator==(Fixed const &other) const
 {
-	if (this->toFloat() == other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value == other.num_value);
 }
 
 bool Fixed::operator!=(Fixed const &other) const
 {
-	if (this->toFloat() != other.toFloat())
-		return true;
-	else
-		return false;
+	return (this->num_value != other.num_value);
 }
 
 Fixed Fixed::operator+(Fixed const &other) const
