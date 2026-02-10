@@ -22,7 +22,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 	if (this != &other)
 	{
 		ClapTrap::operator=(other);
-		this->hit_points = other.hit_points;
+		this->gate_situation = other.gate_situation;
 	}
 	return *this;
 }
